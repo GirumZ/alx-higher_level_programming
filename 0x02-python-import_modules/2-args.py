@@ -6,6 +6,6 @@ if __name__ == "__main__":
         text = 'argument'
     else:
         text = 'arguments'
-    print("{} {}".format(number - 1, text))
+    print("{} {}:".format(number - 1, text))
     for i in range(1, number):
         print("{}: {}".format(i, sys.argv[i]))
