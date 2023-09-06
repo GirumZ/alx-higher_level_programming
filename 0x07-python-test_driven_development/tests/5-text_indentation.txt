@@ -1,0 +1,25 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("This is a simple text. There should be two new lines befor this: and this i guess? Let us see.")
+This is a simple text.
+<BLANKLINE>
+There should be two new lines befor this:
+<BLANKLINE>
+and this i guess?
+<BLANKLINE>
+Let us see.
+<BLANKLINE>
+
+>>> text_indentation()
+Traceback (most recent call last):
+  ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation("")
+>>> text_indentation(122333)
+Traceback (most recent call last):
+  ...
+TypeError: text must be a string
+
+>>> text_indentation("      ")
+
