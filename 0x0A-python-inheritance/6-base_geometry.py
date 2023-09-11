@@ -4,7 +4,7 @@
 
 class BaseGeometry:
     """ A class called BaseGeometry"""
-    
+
     def area(self):
         """ A public instance method that computes the area of an instance
         Raises:
