@@ -1,4 +1,4 @@
-#!/usr/bin/pythn3
+#!/usr/bin/python3
 """ A module defining a function called write_file"""
 
 
