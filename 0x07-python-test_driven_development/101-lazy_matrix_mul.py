@@ -1,4 +1,4 @@
-#!/usr'bin/python3
+#!/usr/bin/python3
 import numpy as np
 """ A module that defines a function called lazy_matrix_mul """
 
