@@ -1,0 +1,71 @@
+	Test module for '100-matrix_mul'
+	===============================
+
+	Importing the '100-matrix_module'
+
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+	Testing with two correct matrices
+
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+[[7, 10], [15, 22]]
+
+	Testing with matrices having negative elements
+
+>>> matrix_mul([[1, 2], [3, -4]], [[5, 6], [-7, 8]])
+[[-9, 22], [43, -14]]
+
+	Testing with matrices having float elements
+
+>>> matrix_mul( [[1, 2.5], [3, 5.4]], [[5, 6.6], [7, 8]])
+[[22.5, 26.6], [52.800000000000004, 63.0]]
+
+	Testing with matrices that are not lists
+
+>>> matrix_mul([[1, 2], [3, 4]], ([1, 2], [3, 4]))
+Traceback (most recent call last):
+	...
+TypeError: m_b must be a list
+
+	Testing with matrices having items that are not lists
+
+>>> matrix_mul([[1, 2], 3, 4], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+	...
+TypeError: m_a must be a list of lists
+
+>>> matrix_mul([[1, 2], (3, 4)], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+	...
+TypeError: m_a must be a list of lists
+
+>>> matrix_mul([[1, 2], "string"], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+	...
+TypeError: m_a must be a list of lists
+
+	Testing with matrices that are empty
+>>> matrix_mul([],[])
+Traceback (most recent call last):
+	...
+ValueError: m_a can't be empty
+
+	Testing with matrices that have non-float or non-integer values
+>>> matrix_mul([[1, 2], [3, 4]], [["string", 2], [3, 4]])
+Traceback (most recent call last):
+	...
+TypeError: m_b should contain only integers or floats
+
+	Testing with matrices that have unequal length elements
+
+>>> matrix_mul([[1, 2], [3, 4, 5]], [[3, 2], [3, 4]])
+Traceback (most recent call last):
+	...
+TypeError: each row of m_a must be of the same size
+
+	Testing with matrices that can't be multiplied
+
+>>> matrix_mul([[1, 2], [3, 4]], [[3, 2], [3, 4], [4,7]])
+Traceback (most recent call last):
+	...
+ValueError: m_a and m_b can't be multiplied
