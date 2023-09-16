@@ -69,3 +69,26 @@ TypeError: each row of m_a must be of the same size
 Traceback (most recent call last):
 	...
 ValueError: m_a and m_b can't be multiplied
+
+	Testing with one argument missing
+
+>>> matrix_mul([[3, 2], [3, 4], [4,7]])
+Traceback (most recent call last):
+	...
+TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+
+	Testing with two arguments missing
+
+>>> matrix_mul()
+Traceback (most recent call last):
+	...
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+	Testing the order of errors raised
+
+>>> matrix_mul([[1, 2], [3, 4]], (["a", 2], [3, 4]))
+Traceback (most recent call last):
+        ...
+TypeError: m_b must be a list
+
+
