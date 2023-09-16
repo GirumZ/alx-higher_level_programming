@@ -27,6 +27,11 @@ Traceback (most recent call last):
 	...
 TypeError: m_b must be a list
 
+>>> matrix_mul("string", ([1, 2], [3, 4]))
+Traceback (most recent call last):
+        ...
+TypeError: m_a must be a list
+
 	Testing with matrices having items that are not lists
 
 >>> matrix_mul([[1, 2], 3, 4], [[1, 2], [3, 4]])
@@ -43,6 +48,11 @@ TypeError: m_a must be a list of lists
 Traceback (most recent call last):
 	...
 TypeError: m_a must be a list of lists
+
+>>> matrix_mul([[1, 2], [3, 4]], [1, 2, 3, 4])
+Traceback (most recent call last):
+        ...
+TypeError: m_b must be a list of lists
 
 	Testing with matrices that are empty
 
