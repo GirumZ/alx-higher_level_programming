@@ -8,23 +8,18 @@ import sys
 import MySQLdb
 
 
-def main():
-    """ Interacts with a database"""
+if __name__ == '__main__':
 
+    args = sys.argv
 
-args = sys.argv
+    conn = MySQLdb.connect(host="localhost", port=3306, user=args[1],
+                           passwd=args[2], db=args[3])
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    rows = cur.fetchall()
 
-conn = MySQLdb.connect(host="localhost", port=3306, user=args[1],
-                       passwd=args[2], db=args[3])
-cur = conn.cursor()
-cur.execute("SELECT * FROM states ORDER BY id ASC")
-rows = cur.fetchall()
+    for row in rows:
+        print(row)
 
-for row in rows:
-    print(row)
-
-cur.close()
-conn.close()
-
-if (__name__ == "__main__"):
-    main()
+    cur.close()
+    conn.close()
