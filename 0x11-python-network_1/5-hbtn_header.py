@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Write a Python script that takes in a URL, sends a request to the URL and
+A Python script that takes in a URL, sends a request to the URL and
 displays the value of the variable X-Request-Id in the response header
 """
 
@@ -9,8 +9,6 @@ import sys
 
 
 if __name__ == "__main__":
-    try:
-        req = requests.get(sys.argv[1])
-        print(req.headers['X-Request-Id'])
-    except:
-        pass
+
+    req = requests.get(sys.argv[1])
+    print(req.headers.get('X-Request-Id'))
